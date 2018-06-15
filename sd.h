@@ -2,7 +2,7 @@
 #ifndef SD_H_
 #define SD_H_
 
-#include "include/thor_config.h"
+#include <Thor\include\config.hpp>
 #ifdef TARGET_STM32F7
 #include <stm32f7xx_hal.h>
 #endif
@@ -16,8 +16,8 @@
 #include "fatFS/ff_gen_drv.h"
 
 /* Thor Includes */
-#include "include/thor_definitions.h"
-#include "include/spi.h"
+#include <Thor\include/definitions.hpp>
+#include <Thor\include/spi.hpp>
 
 /* Boost Includes */
 #include <boost/shared_ptr.hpp>
@@ -28,6 +28,8 @@
 #include "task.h"
 #endif 
 
+using namespace Thor::Definitions::SPI;
+using namespace Thor::Peripheral::SPI;
 
 class SDCard;
 typedef boost::shared_ptr<SDCard> SDCard_sPtr;
