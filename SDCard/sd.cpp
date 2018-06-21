@@ -2,6 +2,7 @@
 #include "stdlib.h"
 #include "string.h"
 #include "stdio.h"
+#include <memory>
 
 /* Boost Includes */
 #include <boost/bind.hpp>
@@ -120,8 +121,8 @@ namespace SD
 	{
 		STATUS = STA_NOINIT;
 
-		spi = boost::make_shared<Chimera::SPI::SPIClass>(spiChannel);
-		ssPin = boost::make_shared<Chimera::GPIO::GPIOClass>(port, pin);
+		spi = std::make_shared<Chimera::SPI::SPIClass>(spiChannel);
+		ssPin = std::make_shared<Chimera::GPIO::GPIOClass>(port, pin);
 
 		ssPin->mode(OUTPUT_PUSH_PULL);
 		ssPin->write(State::HIGH);
