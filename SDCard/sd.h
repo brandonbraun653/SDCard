@@ -143,8 +143,8 @@ namespace SD
 		~SDCard();
 
 	private:
-		Chimera::SPI::SPIClass_sPtr spi;
-		Chimera::GPIO::GPIOClass_sPtr ssPin;
+		Chimera::SPI::SPIClass_uPtr spi;
+		Chimera::GPIO::GPIOClass_uPtr ssPin;
 
 		SemaphoreHandle_t spiTXRXWakeup;	/**< Unblocks the SDCard thread once the transmission/reception is complete */
 

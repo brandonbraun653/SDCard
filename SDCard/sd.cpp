@@ -8,6 +8,9 @@
 #include <boost/bind.hpp>
 #include <boost/function.hpp>
 
+/* Chimera Includes */
+#include <Chimera/utilities.hpp>
+
 /* Project Includes*/
 #include "sd.h"
 
@@ -121,8 +124,8 @@ namespace SD
 	{
 		STATUS = STA_NOINIT;
 
-		spi = std::make_shared<Chimera::SPI::SPIClass>(spiChannel);
-		ssPin = std::make_shared<Chimera::GPIO::GPIOClass>(port, pin);
+		spi = Chimera::make_unique<Chimera::SPI::SPIClass>(spiChannel);
+		ssPin = Chimera::make_unique<Chimera::GPIO::GPIOClass>(port, pin);
 
 		ssPin->mode(OUTPUT_PUSH_PULL);
 		ssPin->write(State::HIGH);
