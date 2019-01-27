@@ -1,6 +1,6 @@
 #pragma once
-#ifndef SD_H_
-#define SD_H_
+#ifndef SD_HPP_
+#define SD_HPP_
 
 /* Boost Includes */
 #include <boost/shared_ptr.hpp>
